@@ -22,6 +22,31 @@ const routesConfig = [
     exact: true,
     component: CategoryPage,
   },
+  {
+    path: '/adjective',
+    exact: true,
+    component: CategoryPage,
+  },
+  {
+    path: '/animal-a',
+    exact: true,
+    component: CategoryPage,
+  },
+  {
+    path: '/animal-b',
+    exact: true,
+    component: CategoryPage,
+  },
+  {
+    path: '/clothes',
+    exact: true,
+    component: CategoryPage,
+  },
+  {
+    path: '/emotions',
+    exact: true,
+    component: CategoryPage,
+  },
 ];
 
 export default routesConfig;
