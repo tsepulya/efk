@@ -14,6 +14,7 @@ const categories = [
     translation: ['плакать', 'танцевать', 'нырять', 'рисовать', 'рыбачить', 'летать', 'обнимать', 'прыгать'],
     images: actionAImages,
     sound: actionAAudio,
+    path: '/action-a',
   },
   {
     category: 'Action (set B)',
@@ -21,6 +22,7 @@ const categories = [
     translation: ['открывать', 'играть', 'указывать', 'ездить', 'бежать', 'петь', 'скакать', 'плавать'],
     images: actionBImages,
     sound: actionBAudio,
+    path: '/action-b',
   },
   {
     category: 'Transport',
@@ -28,6 +30,7 @@ const categories = [
     translation: ['автобус', 'машина', 'самолет', 'корабль', 'лодка', 'вертолет', 'поезд', 'велосипед'],
     images: transportImages,
     sound: transportAudio,
+    path: '/transport',
   },
   {
     category: 'Adjective',
@@ -35,6 +38,7 @@ const categories = [
     translation: ['плохой', 'красивый', 'большой', 'сломанный', 'чистый', 'холодный', 'грязный', 'тяжелый'],
     images: adjectiveImages,
     sound: adjectiveAudio,
+    path: '/adjective',
   },
   {
     category: 'Animal (set A)',
@@ -42,6 +46,7 @@ const categories = [
     translation: ['кот', 'цыпленок', 'курица', 'собака', 'лошадь', 'свинья', 'кролик', 'овца'],
     images: animalAImages,
     sound: animalAAudio,
+    path: '/animal-a',
   },
   {
     category: 'Animal (set B)',
@@ -49,6 +54,7 @@ const categories = [
     translation: ['птица', 'панда', 'лягушка', 'жираф', 'лев', 'мышь', 'черепаха', 'дельфин'],
     images: animalBImages,
     sound: animalBAudio,
+    path: '/animal-b',
   },
   {
     category: 'Clothes',
@@ -56,6 +62,7 @@ const categories = [
     translation: ['юбка', 'штаны', 'блузка', 'платье', 'ботинки', 'рубашка', 'пальто', 'туфли'],
     images: clothesImages,
     sound: clothesAudio,
+    path: '/clothes',
   },
   {
     category: 'Emotions',
@@ -63,6 +70,7 @@ const categories = [
     translation: ['грустный', 'злой', 'счастливый', 'усталый', 'удивленный', 'испуганный', 'улыбаться', 'смеяться'],
     images: emotionsImages,
     sound: emotionsAudio,
+    path: '/emotions',
   },
 ];
 
