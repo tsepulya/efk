@@ -1,4 +1,4 @@
-.btn__play_start {
+.btn__play_start, .btn__play_reset {
     padding: 20px 25px;
     font-size: 24px;
     margin-left: 30%;
@@ -17,6 +17,22 @@
     position: relative;
 }
 
-.btn__play_start:hover {
+.btn__play_start {
+    margin-left: 30%;
+    width: 600px;
+}
+
+.btn__play_reset {
+    margin-left: 48%;
+    width: 66px;
+}
+
+.btn__play_start:hover,
+.btn__play_reset:hover {
     cursor: pointer;
+}
+
+.btn__repeat_img {
+    width: 30px;
+    height: 30px;
 }
