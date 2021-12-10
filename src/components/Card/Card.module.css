@@ -63,6 +63,10 @@
     justify-content: center;
 }
 
+.card__play .card__footer {
+    display: none;
+}
+
 .card__word {
     font-size: 26px;
 }

@@ -4,7 +4,7 @@ import changeCssVar from '../service/changeCSSVar';
 export const MODE_PLAY = 'play';
 export const MODE_TRAIN = 'train';
 
-const ModeContext = React.createContext();
+export const ModeContext = React.createContext();
 
 // eslint-disable-next-line react/prop-types
 export const ModeProvider = ({ children, ...props }) => {
