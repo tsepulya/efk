@@ -7,7 +7,7 @@
       z-index: 999999;
       top: 0;
       left: -360px;
-      background: linear-gradient(180deg, #0099ae 0%, #00bf82 100%);
+      background: var(--theme-default-switcher);
       transition: all 0.5s;
       width: 320px;
       height: 100vh;
@@ -148,4 +148,8 @@
 
   .list__container :global(a.active) {
     color: #c0c0c0;
+}
+
+.menu__img {
+    cursor: pointer;
 }

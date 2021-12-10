@@ -15,7 +15,7 @@
     height: 40px;
     margin: 0 auto;
     position: relative;
-    background: linear-gradient(180deg, #0099ae 0%, #00bf82 100%);
+    background: var(--theme-default-switcher);
     background-position: -72px 0;
     background-size: 200% 100%;
     border: 1px solid #bababb;

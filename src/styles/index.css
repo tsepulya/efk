@@ -3,10 +3,17 @@
     --color-black: #000;
     --color-half-black: rgba(0, 0, 0, 0.5);
     --font-family-main: 'Roboto', sans-serif;
-    --bgc-gradient-green: linear-gradient(180deg, #0099ae, #00bf82 40%, #fff 0%);
-    --bgc-gradient-red: linear-gradient(180deg, #fc6262, #ffd86f 40%, #fff 0%);
+
 
     --transition: .3s;
+
+    --theme-train-card: linear-gradient(180deg, #0099ae, #00bf82 40%, #fff 0%);
+    --theme-play-card: linear-gradient(180deg, #fc6262, #ffd86f 40%, #fff 0%);
+    --theme-default-card: var(--theme-train-card);
+
+    --theme-train-switcher: linear-gradient(180deg, #0099ae 0%, #00bf82 100%);
+    --theme-play-switcher: linear-gradient(180deg, #fc6262 0%, #ffd86f 100%);
+    --theme-default-switcher: var(--theme-train-switcher);
 }
 
 * {
