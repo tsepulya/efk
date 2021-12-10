@@ -10,6 +10,7 @@ const CardWords = ({ card }) => {
     images,
     sound,
   } = card;
+
   return (
     <div className={styles.main__container}>
       {words.map((elem, index) => (

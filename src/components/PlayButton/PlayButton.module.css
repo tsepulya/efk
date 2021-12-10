@@ -1,0 +1,22 @@
+.btn__play_start {
+    padding: 20px 25px;
+    font-size: 24px;
+    margin-left: 30%;
+    height: 66px;
+    width: 600px;
+    background: linear-gradient(90deg, #fc6262 0%, #ffd86f 100%);
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    border: 0;
+    border-radius: 10px;
+    transition: 1s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.btn__play_start:hover {
+    cursor: pointer;
+}
