@@ -1,11 +1,19 @@
+/* eslint-disable no-lonely-if */
 // eslint-disable-next-line object-curly-newline
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 import { useMode, MODE_PLAY, MODE_TRAIN } from '../../context/ModeProvider';
 import Arrows from './Arrows';
 import playAudio from '../../service/playAudio';
+import store from '../../store/store';
+import { addArrayOfWords, addCorrectAnswer, addWrongAnswer } from '../../store/actions/index';
+import correct from '../../assets/common/audio/correct.mp3';
+import error from '../../assets/common/audio/error.mp3';
+import success from '../../assets/common/audio/success.mp3';
+import failure from '../../assets/common/audio/failure.mp3';
 import styles from './Card.module.css';
 
 function Card({
@@ -16,6 +24,7 @@ function Card({
 }) {
   const ref = useRef();
   const isMode = useMode();
+  const dispatch = useDispatch();
   const [onHover, setOnHover] = useState(false);
   const [side, setSide] = useState('front');
   const [classPlay, setClassPlay] = useState(null);
@@ -51,9 +60,44 @@ function Card({
     }
   };
 
+  const playGame = () => {
+    if (sound === store.getState().playReducer.arrayOfWords[0]) {
+      playAudio(correct);
+      dispatch(addCorrectAnswer());
+      const playArray = store.getState().playReducer.arrayOfWords.slice(1);
+      dispatch(addArrayOfWords(playArray));
+      setTimeout(() => playAudio(store.getState().playReducer.arrayOfWords[0]), 1500);
+    } else {
+      playAudio(error);
+      dispatch(addWrongAnswer());
+    }
+  };
+
+  const checkTheArray = () => {
+    if (store.getState().playReducer.arrayOfWords.length > 1) {
+      playGame();
+      // console.log(store.getState().playReducer);
+    } else {
+      if (sound === store.getState().playReducer.arrayOfWords[0]) {
+        playAudio(correct);
+        dispatch(addCorrectAnswer());
+        if (store.getState().playReducer.wrong) {
+          setTimeout(() => playAudio(failure), 2000);
+        } else {
+          setTimeout(() => playAudio(success), 2000);
+        }
+      } else {
+        playAudio(error);
+        dispatch(addWrongAnswer());
+      }
+    }
+  };
+
   const makeSound = () => {
     if (classPlay !== styles.card__play) {
       playAudio(sound);
+    } else {
+      checkTheArray();
     }
   };
 

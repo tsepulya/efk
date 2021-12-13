@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { ModeProvider } from './context/ModeProvider';
 import App from './containers/App/App';
+import store from './store/store';
 
 import './styles/index.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
 ReactDOM.render(
-  <ModeProvider>
-    <App />
-  </ModeProvider>,
+  <Provider store={store}>
+    <ModeProvider>
+      <App />
+    </ModeProvider>
+  </Provider>,
   document.getElementById('root'),
 );

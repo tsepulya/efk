@@ -30,7 +30,7 @@ const CategoryPage = () => {
     <>
       <h1 className={styles.container__category_name}>{cardCategory.category}</h1>
       <CardWords card={cardCategory} />
-      {btn && <PlayButton />}
+      {btn && <PlayButton category={cardCategory} />}
     </>
   );
 };
