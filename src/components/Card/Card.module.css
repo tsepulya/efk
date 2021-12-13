@@ -19,7 +19,12 @@
 }
 
 .card__disabled:hover {
-    box-shadow: 0;
+    transition: none;
+    box-shadow: none;
+}
+
+.card__disabled .card__img {
+    opacity: 0.3;
 }
 
 .card__front,

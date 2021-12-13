@@ -28,6 +28,7 @@ function Card({
   const [onHover, setOnHover] = useState(false);
   const [side, setSide] = useState('front');
   const [classPlay, setClassPlay] = useState(null);
+  const [classDisabled, setClassDisabled] = useState(null);
 
   if (isMode) {
     useEffect(() => {
@@ -41,7 +42,7 @@ function Card({
         default:
           setClassPlay(null);
       }
-    }, [isMode]);
+    }, [isMode, classDisabled]);
   }
 
   const flipCard = () => {
@@ -64,6 +65,7 @@ function Card({
     if (sound === store.getState().playReducer.arrayOfWords[0]) {
       playAudio(correct);
       dispatch(addCorrectAnswer());
+      setClassDisabled(styles.card__disabled);
       const playArray = store.getState().playReducer.arrayOfWords.slice(1);
       dispatch(addArrayOfWords(playArray));
       setTimeout(() => playAudio(store.getState().playReducer.arrayOfWords[0]), 1500);
@@ -96,7 +98,7 @@ function Card({
   const makeSound = () => {
     if (classPlay !== styles.card__play) {
       playAudio(sound);
-    } else {
+    } else if (classDisabled !== styles.card__disabled) {
       checkTheArray();
     }
   };
@@ -110,7 +112,7 @@ function Card({
       // if you pass isFlipped prop component will be controlled component.
       // and other props, which will go to div
       // className={cn(styles.card, classPlay)}
-      className={cn(styles.card, classPlay)}
+      className={cn(styles.card, classPlay, classDisabled)}
     >
       <FrontSide
         className={styles.card__front}
