@@ -42,6 +42,7 @@ const CategoryPage = () => {
       }
     }, [isMode]);
   }
+
   const cardCategory = categories.find((elem) => elem.path === location.pathname);
   return (
     <>

@@ -3,7 +3,7 @@
 // import { LOCALSRORAGE_LENGTH } from "../constants/consts";
 import categories from '../constants/categories';
 
-const LOCALSRORAGE_LENGTH = 64;
+const LOCALSRORAGE_LENGTH = 65;
 
 export function addInLocalStorage() {
   if (localStorage.length !== LOCALSRORAGE_LENGTH) {

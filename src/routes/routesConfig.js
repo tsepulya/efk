@@ -1,6 +1,7 @@
 import HomePage from '../containers/HomePage/HomePage';
 import CategoryPage from '../containers/CategoryPage/CategoryPage';
 import Statistics from '../containers/Statistics/Statistics';
+import Repeat from '../containers/Repeat/Repeat';
 
 const routesConfig = [
   {
@@ -52,6 +53,11 @@ const routesConfig = [
     path: '/statistics',
     exact: true,
     component: Statistics,
+  },
+  {
+    path: '/repeat',
+    exact: true,
+    component: Repeat,
   },
 ];
 

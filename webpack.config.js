@@ -1,59 +1,59 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "index-bundle.js"
+    path: path.join(__dirname, '/dist'),
+    filename: 'index-bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"]
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
         use: [
-            require.resolve('style-loader'),
-            {
-                loader: require.resolve('css-loader'),
-                options: {
-                    importLoaders: 1,
-                    modules: true,
-                    localIdentName: '[name]__[local]__[hash:base64:5]'
-                },
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+              modules: true,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
             },
-          ]
+          },
+        ],
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: ['file-loader', {
           loader: 'image-webpack-loader',
           options: {
-          bypassOnDebug: true, // webpack@1.x
-          disable: true, // webpack@2.x and newer
-      },
-    },
-  ],
+            bypassOnDebug: true, // webpack@1.x
+            disable: true, // webpack@2.x and newer
+          },
+        },
+        ],
       },
       {
         test: /\.mp3$/,
-        loader: 'file-loader'
-    },
-    ]
+        loader: 'file-loader',
+      },
+    ],
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: './src/index.html',
     }),
   ],
 };
