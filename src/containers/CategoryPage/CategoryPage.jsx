@@ -7,6 +7,7 @@ import categories from '../../constants/categories';
 import store from '../../store/store';
 import EndOfGame from '../../components/EndOfGame/EndOfGame';
 import styles from './CategoryPage.module.css';
+import StarRating from '../../components/StarRating/StarRating';
 
 const CategoryPage = () => {
   const location = useLocation();
@@ -47,6 +48,7 @@ const CategoryPage = () => {
       {fin && <EndOfGame />}
       <div className={classHidden}>
         <h1 className={styles.container__category_name}>{cardCategory.category}</h1>
+        <StarRating />
         <CardWords card={cardCategory} />
         {btn && <PlayButton category={cardCategory} />}
       </div>

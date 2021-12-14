@@ -1,0 +1,14 @@
+.play__rating {
+    text-align: center;
+    margin: auto;
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.play__rating_img {
+    width: 64px;
+    height: 64px;
+}

@@ -20,17 +20,18 @@ const PlayButton = ({ category }) => {
 
   const startPlay = () => {
     dispatch(returnToInitialState());
-    const playArray = category.sound.sort(() => Math.random() - 0.5);
+    const soundArray = category.sound.slice(0);
+    const playArray = soundArray.sort(() => Math.random() - 0.5);
     dispatch(addArrayOfWords(playArray));
-    // dispatch(addActiveSound(playArray[0]));
     playAudio(store.getState().playReducer.arrayOfWords[0]);
-    // console.log(store.getState().playReducer.activeSound);
   };
 
   const changeBtn = () => {
     if (innerBtn === START) {
       startPlay(category);
       setInnerBtn(<RepeatBtn />);
+    } else {
+      playAudio(store.getState().playReducer.arrayOfWords[0]);
     }
   };
 

@@ -1,7 +1,7 @@
 // import { omit } from 'lodash';
 
 import {
-  ADD_CORRECT_ANSWER, ADD_WRONG_ANSWER,
+  ADD_CORRECT_ANSWER, ADD_WRONG_ANSWER, ADD_STAR,
   ADD_ACTIVE_SOUND, ADD_ARRAY_OF_WORDS, RETURN_TO_INITIAL_STATE,
 } from '../constants/actionTypes';
 // import { getLocalStorage } from '../../utils/localStorage';
@@ -13,6 +13,7 @@ export const initialState = {
   correct: 0,
   wrong: 0,
   activeSound: '',
+  starRating: [],
 };
 
 const playReducer = (state = initialState, action) => {
@@ -27,6 +28,8 @@ const playReducer = (state = initialState, action) => {
       return { ...state, arrayOfWords: action.payload };
     case RETURN_TO_INITIAL_STATE:
       return initialState;
+    case ADD_STAR:
+      return { ...state, starRating: [...state.starRating, action.payload] };
     default:
       return state;
   }
