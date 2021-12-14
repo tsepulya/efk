@@ -1,0 +1,59 @@
+.statistics__container {
+    margin: auto;
+    width: 96%;
+}
+
+.statistics__btn_div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .statistics__btn {
+    color: #fff;
+    background: linear-gradient(90deg, #fc6262 0%, #ffd86f 100%);
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .statistics__table {
+    width: 1450px;
+  }
+
+  .table__title:hover {
+    cursor: pointer;
+  }
+  
+  th {
+    background: #fc6262;
+    border-bottom: 3px solid #ffd86f;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  tr:nth-child(odd) {
+    background: #fff;
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background: #ffd86f;
+    text-align: center;
+  }
+  
+  .statistics__difficult_p {
+    color: #fc6262;
+    font-size: 30px;
+    font-weight: bold;
+  }

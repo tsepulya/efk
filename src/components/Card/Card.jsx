@@ -12,6 +12,7 @@ import store from '../../store/store';
 import {
   addArrayOfWords, addCorrectAnswer, addWrongAnswer, addStar,
 } from '../../store/actions/index';
+import { changeData, changeWrongData } from '../../service/changeStatistics';
 import correct from '../../assets/common/audio/correct.mp3';
 import error from '../../assets/common/audio/error.mp3';
 import success from '../../assets/common/audio/success.mp3';
@@ -70,6 +71,7 @@ function Card({
       playAudio(correct);
       dispatch(addStar('starWin'));
       dispatch(addCorrectAnswer());
+      changeData(word, 'correct');
       setClassDisabled(styles.card__disabled);
       const playArray = store.getState().playReducer.arrayOfWords.slice(1);
       dispatch(addArrayOfWords(playArray));
@@ -78,6 +80,7 @@ function Card({
       playAudio(error);
       dispatch(addStar('star'));
       dispatch(addWrongAnswer());
+      changeWrongData(store.getState().playReducer.arrayOfWords[0], 'wrong');
     }
   };
 
@@ -88,6 +91,7 @@ function Card({
       if (sound === store.getState().playReducer.arrayOfWords[0]) {
         playAudio(correct);
         dispatch(addCorrectAnswer());
+        changeData(word, 'correct');
         if (store.getState().playReducer.wrong) {
           setTimeout(() => playAudio(failure), 1000);
         } else {
@@ -96,6 +100,7 @@ function Card({
       } else {
         playAudio(error);
         dispatch(addWrongAnswer());
+        changeWrongData(store.getState().playReducer.arrayOfWords[0], 'wrong');
       }
     }
   };
@@ -103,8 +108,8 @@ function Card({
   const makeSound = () => {
     if (classPlay !== styles.card__play) {
       playAudio(sound);
+      changeData(word, 'clicks');
     } else if (classDisabled !== styles.card__disabled) {
-      // console.log('click on btn', store.getState().playReducer);
       checkTheArray();
     }
   };

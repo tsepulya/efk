@@ -49,6 +49,9 @@ const Menu = () => {
             <li className={styles.menu__list}>
               <NavLink to="/emotions" className={styles.menu__page}>Emotions</NavLink>
             </li>
+            <li className={styles.menu__list}>
+              <NavLink to="/statistics" className={styles.menu__page}>Statistics</NavLink>
+            </li>
           </ul>
         </div>
         <div className={styles.side_button_1_wr}>

@@ -1,5 +1,6 @@
 import HomePage from '../containers/HomePage/HomePage';
 import CategoryPage from '../containers/CategoryPage/CategoryPage';
+import Statistics from '../containers/Statistics/Statistics';
 
 const routesConfig = [
   {
@@ -46,6 +47,11 @@ const routesConfig = [
     path: '/emotions',
     exact: true,
     component: CategoryPage,
+  },
+  {
+    path: '/statistics',
+    exact: true,
+    component: Statistics,
   },
 ];
 
