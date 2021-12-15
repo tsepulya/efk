@@ -1,0 +1,17 @@
+.efk__footer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+  
+.footer__link_github,
+.footer__year {
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+}
+  
+.footer__logo {
+    width: 40%;
+}

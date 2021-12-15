@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import Fader from 'react-fader';
 // import Switch from 'react-router-transition-switch';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import routesConfig from '../../routes/routesConfig';
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
             );
           })}
         </Switch>
+        <Footer />
       </div>
     </Router>
   </>
