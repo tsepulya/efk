@@ -93,18 +93,22 @@ const Statistics = () => {
         <button type="button" className={cn(styles.statistics__btn, styles.btn__reset)} onClick={() => reset()}>Reset</button>
       </div>
       <table className={styles.statistics__table}>
-        <tr>
-          <th className={styles.table__title} onClick={() => sortWords('word')} aria-hidden="true">Word</th>
-          <th className={styles.table__title} onClick={() => sortWords('translation')} aria-hidden="true">Translation</th>
-          <th className={styles.table__title} onClick={() => sortWords('category')} aria-hidden="true">Category</th>
-          <th className={styles.table__title} onClick={() => sortWords('clicks')} aria-hidden="true">Clicks</th>
-          <th className={styles.table__title} onClick={() => sortWords('correct')} aria-hidden="true">Correct</th>
-          <th className={styles.table__title} onClick={() => sortWords('wrong')} aria-hidden="true">Wrong</th>
-          <th className={styles.table__title} onClick={() => sortWords('errors')} aria-hidden="true">% errors</th>
-        </tr>
-        {words.map((elem) => (
-          <TableInner keyWord={elem} key={uuid()} />
-        ))}
+        <thead>
+          <tr>
+            <th className={styles.table__title} onClick={() => sortWords('word')} aria-hidden="true">Word</th>
+            <th className={styles.table__title} onClick={() => sortWords('translation')} aria-hidden="true">Translation</th>
+            <th className={styles.table__title} onClick={() => sortWords('category')} aria-hidden="true">Category</th>
+            <th className={styles.table__title} onClick={() => sortWords('clicks')} aria-hidden="true">Clicks</th>
+            <th className={styles.table__title} onClick={() => sortWords('correct')} aria-hidden="true">Correct</th>
+            <th className={styles.table__title} onClick={() => sortWords('wrong')} aria-hidden="true">Wrong</th>
+            <th className={styles.table__title} onClick={() => sortWords('errors')} aria-hidden="true">% errors</th>
+          </tr>
+        </thead>
+        <tbody>
+          {words.map((elem) => (
+            <TableInner keyWord={elem} key={uuid()} />
+          ))}
+        </tbody>
       </table>
     </div>
   );

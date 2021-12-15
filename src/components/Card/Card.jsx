@@ -17,8 +17,6 @@ import correct from '../../assets/common/audio/correct.mp3';
 import error from '../../assets/common/audio/error.mp3';
 import success from '../../assets/common/audio/success.mp3';
 import failure from '../../assets/common/audio/failure.mp3';
-// import starWin from '../../assets/common/img/star-win.svg';
-// import star from '../../assets/common/img/star.svg';
 import styles from './Card.module.css';
 
 function Card({
@@ -75,7 +73,7 @@ function Card({
       setClassDisabled(styles.card__disabled);
       const playArray = store.getState().playReducer.arrayOfWords.slice(1);
       dispatch(addArrayOfWords(playArray));
-      setTimeout(() => playAudio(store.getState().playReducer.arrayOfWords[0]), 1500);
+      setTimeout(() => playAudio(store.getState().playReducer.arrayOfWords[0]), 1000);
     } else {
       playAudio(error);
       dispatch(addStar('star'));

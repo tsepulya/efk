@@ -26,9 +26,7 @@ const CategoryPage = ({ repeat }) => {
     }
   };
 
-  const unsubscribe = store.subscribe(changeInCorrect);
-  // eslint-disable-next-line no-unused-expressions
-  unsubscribe;
+  store.subscribe(changeInCorrect);
 
   if (isMode) {
     useEffect(() => {
@@ -64,7 +62,10 @@ const CategoryPage = ({ repeat }) => {
 };
 
 CategoryPage.propTypes = {
-  repeat: PropTypes.instanceOf(Object),
+  repeat: PropTypes.oneOfType([
+    PropTypes.instanceOf(Object),
+    PropTypes.string,
+  ]),
 };
 
 CategoryPage.defaultProps = {

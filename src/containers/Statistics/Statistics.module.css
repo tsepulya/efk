@@ -61,3 +61,34 @@
     font-size: 30px;
     font-weight: bold;
   }
+
+  @media (min-width: 1050px) and (max-width: 1449px) {
+
+    .statistics__table {
+      width: 1050px;
+    }
+
+  }
+  
+  @media (min-width: 800px) and (max-width: 1049px) {
+  
+    .statistics__table {
+      margin: auto;
+      width: 800px;
+    }
+
+  }
+  
+  @media (max-width: 799px) {
+  
+    .statistics__table {
+      font-size: 12px;
+      width: 320px;
+    }
+  
+    th,
+    td {
+      padding: 0;
+    }
+    
+  }

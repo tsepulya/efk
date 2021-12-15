@@ -56,4 +56,5 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  devtool: 'source-map ./src',
 };

@@ -12,3 +12,16 @@
     width: 64px;
     height: 64px;
 }
+
+@media (max-width: 799px) {
+  
+    .play__rating {
+      width: 320px;
+    }
+  
+    .play__rating_img {
+      width: 32px;
+      height: 32px;
+    }
+  
+}

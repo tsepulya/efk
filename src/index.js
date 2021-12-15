@@ -8,14 +8,14 @@ import { addInLocalStorage } from './utils/localStorage';
 
 import './styles/index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
 ReactDOM.render(
-  <Provider store={store}>
-    <ModeProvider>
-      <App />
-    </ModeProvider>
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <ModeProvider>
+        <App />
+      </ModeProvider>
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 

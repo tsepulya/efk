@@ -18,7 +18,7 @@ const Menu = () => {
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <nav className={styles.menu}>
-        <input type="checkbox" id="side-checkbox" className={styles.side_checkbox} onClick={handleClick} checked={checked} />
+        <input type="checkbox" id="side-checkbox" className={styles.side_checkbox} onChange={handleClick} checked={checked} />
         <div className={styles.side_panel}>
           <p className={styles.menu__btn_close} onClick={handleClick} aria-hidden="true">X</p>
           <ul className={styles.list__container}>

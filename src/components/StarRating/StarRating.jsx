@@ -21,13 +21,15 @@ Star.propTypes = {
 const StarRating = () => {
   const [stars, setStars] = useState([]);
   const addStar = () => {
+    let isMounted = true;
     const starsStore = store.getState().playReducer.starRating;
-    setStars(starsStore);
+    if (isMounted) {
+      setStars(starsStore);
+    }
+    return () => { isMounted = false; };
   };
 
-  const unsubscribe = store.subscribe(addStar);
-  // eslint-disable-next-line no-unused-expressions
-  unsubscribe;
+  store.subscribe(addStar);
 
   return (
     <div className={styles.play__rating}>

@@ -36,3 +36,36 @@
     width: 30px;
     height: 30px;
 }
+
+@media (min-width: 1050px) and (max-width: 1449px) {
+  
+    .btn__play_start {
+      margin-left: 26%;
+    }
+  
+    .btn__play_reset {
+      margin-left: 48%;
+    }
+  
+  }
+  
+  @media (min-width: 800px) and (max-width: 1049px) {
+  
+    .btn__play_start {
+      margin-left: 18%;
+    }
+  
+  }
+  
+  @media (max-width: 799px) {
+  
+    .btn__play_start {
+      margin: auto;
+      width: 300px;
+    }
+  
+    .btn__play_reset {
+      margin-left: 48%;
+    }
+  
+  }

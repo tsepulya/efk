@@ -1,0 +1,23 @@
+@media (min-width: 1050px) and (max-width: 1449px) {
+
+    .app {
+      width: 1050px;
+    }
+  
+  }
+  
+  @media (min-width: 800px) and (max-width: 1049px) {
+
+    .app {
+      width: 800px;
+    }
+  
+  }
+  
+  @media (max-width: 799px) {
+
+    .app {
+      width: 320px;
+    }
+  
+  }
