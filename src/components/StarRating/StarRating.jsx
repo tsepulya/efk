@@ -1,16 +1,16 @@
-/* eslint-disable arrow-body-style */
 import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import PropTypes from 'prop-types';
 import star from '../../assets/common/img/star.svg';
 import starWin from '../../assets/common/img/star-win.svg';
 import store from '../../store/store';
+import { STAR } from '../../constants/constants';
 import styles from './StarRating.module.css';
 
 const Star = ({ img }) => {
-  const src = (img === 'star') ? star : starWin;
+  const src = (img === STAR) ? star : starWin;
   return (
-    <img src={src} alt="star" className={styles.play__rating_img} />
+    <img src={src} alt={STAR} className={styles.play__rating_img} />
   );
 };
 

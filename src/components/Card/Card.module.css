@@ -81,7 +81,7 @@
     width: 30px;
 }
 
-button {
+.card__btn {
     background: none;
     padding: 0;
     border: none;

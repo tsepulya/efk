@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import uuid from 'react-uuid';
 import cn from 'classnames';
-
 import { takeWordsFromLocalStorage } from '../../utils/localStorage';
+import {
+  ORDER_FROM_BIG, ORDER_FROM_SMALL,
+  order, WORD, TRANSLATION, CATEGORY, CLICKS, CORRECT, WRONG, ERRORS,
+} from '../../constants/constants';
 import styles from './Statistics.module.css';
-
-export const ORDER_FROM_SMALL = 'smallToBig';
-export const ORDER_FROM_BIG = 'bigToSmall';
-
-export const order = {
-  direction: ORDER_FROM_SMALL,
-};
 
 const TableInner = ({ keyWord }) => (
   <tr className={styles.statistics__tr}>
@@ -35,12 +31,10 @@ TableInner.propTypes = {
 
 const Statistics = () => {
   const initial = takeWordsFromLocalStorage();
-  // eslint-disable-next-line no-unused-vars
   const [words, setWords] = useState(initial);
 
   useEffect(() => {
   }, [words]);
-  //   const words = takeWordsFromLocalStorage();
   const sortWords = (prop) => {
     let wordsSorted = words.slice(0);
     if (order.direction === ORDER_FROM_SMALL) {
@@ -85,7 +79,7 @@ const Statistics = () => {
   return (
     <div className={styles.statistics__container}>
       <div className={styles.statistics__btn_div}>
-        <Link to="/repeat">
+        <Link to="/repeat" className={styles.repeat__link}>
           <button type="button" className={cn(styles.statistics__btn, styles.btn__difficult)}>
             Repeat difficult words
           </button>
@@ -95,13 +89,13 @@ const Statistics = () => {
       <table className={styles.statistics__table}>
         <thead>
           <tr>
-            <th className={styles.table__title} onClick={() => sortWords('word')} aria-hidden="true">Word</th>
-            <th className={styles.table__title} onClick={() => sortWords('translation')} aria-hidden="true">Translation</th>
-            <th className={styles.table__title} onClick={() => sortWords('category')} aria-hidden="true">Category</th>
-            <th className={styles.table__title} onClick={() => sortWords('clicks')} aria-hidden="true">Clicks</th>
-            <th className={styles.table__title} onClick={() => sortWords('correct')} aria-hidden="true">Correct</th>
-            <th className={styles.table__title} onClick={() => sortWords('wrong')} aria-hidden="true">Wrong</th>
-            <th className={styles.table__title} onClick={() => sortWords('errors')} aria-hidden="true">% errors</th>
+            <th className={styles.table__title} onClick={() => sortWords(WORD)} aria-hidden="true">Word</th>
+            <th className={styles.table__title} onClick={() => sortWords(TRANSLATION)} aria-hidden="true">Translation</th>
+            <th className={styles.table__title} onClick={() => sortWords(CATEGORY)} aria-hidden="true">Category</th>
+            <th className={styles.table__title} onClick={() => sortWords(CLICKS)} aria-hidden="true">Clicks</th>
+            <th className={styles.table__title} onClick={() => sortWords(CORRECT)} aria-hidden="true">Correct</th>
+            <th className={styles.table__title} onClick={() => sortWords(WRONG)} aria-hidden="true">Wrong</th>
+            <th className={styles.table__title} onClick={() => sortWords(ERRORS)} aria-hidden="true">% errors</th>
           </tr>
         </thead>
         <tbody>

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from 'react';
 import { useMode, MODE_PLAY, MODE_TRAIN } from '../../../context/ModeProvider';
 import styles from './UiSwitcher.module.css';

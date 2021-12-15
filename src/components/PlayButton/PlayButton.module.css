@@ -1,7 +1,18 @@
+.btn__container {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 96%;
+  padding: 0;
+}
+
 .btn__play_start, .btn__play_reset {
+    position: relative;
     padding: 20px 25px;
     font-size: 24px;
-    margin-left: 30%;
     height: 66px;
     width: 600px;
     background: linear-gradient(90deg, #fc6262 0%, #ffd86f 100%);
@@ -14,17 +25,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
-
-.btn__play_start {
-    margin-left: 30%;
-    width: 600px;
 }
 
 .btn__play_reset {
-    margin-left: 48%;
-    width: 66px;
+  width: 66px;
 }
 
 .btn__play_start:hover,
@@ -36,36 +40,12 @@
     width: 30px;
     height: 30px;
 }
-
-@media (min-width: 1050px) and (max-width: 1449px) {
-  
-    .btn__play_start {
-      margin-left: 26%;
-    }
-  
-    .btn__play_reset {
-      margin-left: 48%;
-    }
-  
-  }
-  
-  @media (min-width: 800px) and (max-width: 1049px) {
-  
-    .btn__play_start {
-      margin-left: 18%;
-    }
-  
-  }
   
   @media (max-width: 799px) {
   
     .btn__play_start {
       margin: auto;
       width: 300px;
-    }
-  
-    .btn__play_reset {
-      margin-left: 48%;
     }
   
   }

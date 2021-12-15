@@ -1,5 +1,3 @@
-/* eslint-disable no-lonely-if */
-// eslint-disable-next-line object-curly-newline
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
@@ -13,6 +11,9 @@ import {
   addArrayOfWords, addCorrectAnswer, addWrongAnswer, addStar,
 } from '../../store/actions/index';
 import { changeData, changeWrongData } from '../../service/changeStatistics';
+import {
+  BACK, CLICKS, CORRECT, FRONT, STAR, STARWIN, WRONG,
+} from '../../constants/constants';
 import correct from '../../assets/common/audio/correct.mp3';
 import error from '../../assets/common/audio/error.mp3';
 import success from '../../assets/common/audio/success.mp3';
@@ -29,7 +30,7 @@ function Card({
   const isMode = useMode();
   const dispatch = useDispatch();
   const [onHover, setOnHover] = useState(false);
-  const [side, setSide] = useState('front');
+  const [side, setSide] = useState(FRONT);
   const [classPlay, setClassPlay] = useState(null);
   const [classDisabled, setClassDisabled] = useState(null);
 
@@ -51,62 +52,60 @@ function Card({
   const flipCard = () => {
     if (classPlay !== styles.card__play) {
       ref.current.toggle();
-      setSide('back');
+      setSide(BACK);
       setOnHover(true);
     }
   };
 
   const flipCardToFront = () => {
-    if (side === 'back') {
+    if (side === BACK) {
       ref.current.toggle();
       setOnHover(false);
-      setSide('front');
+      setSide(FRONT);
     }
   };
 
   const playGame = () => {
     if (sound === store.getState().playReducer.arrayOfWords[0]) {
       playAudio(correct);
-      dispatch(addStar('starWin'));
+      dispatch(addStar(STARWIN));
       dispatch(addCorrectAnswer());
-      changeData(word, 'correct');
+      changeData(word, CORRECT);
       setClassDisabled(styles.card__disabled);
       const playArray = store.getState().playReducer.arrayOfWords.slice(1);
       dispatch(addArrayOfWords(playArray));
       setTimeout(() => playAudio(store.getState().playReducer.arrayOfWords[0]), 1000);
     } else {
       playAudio(error);
-      dispatch(addStar('star'));
+      dispatch(addStar(STAR));
       dispatch(addWrongAnswer());
-      changeWrongData(store.getState().playReducer.arrayOfWords[0], 'wrong');
+      changeWrongData(store.getState().playReducer.arrayOfWords[0], WRONG);
     }
   };
 
   const checkTheArray = () => {
     if (store.getState().playReducer.arrayOfWords.length > 1) {
       playGame();
-    } else {
-      if (sound === store.getState().playReducer.arrayOfWords[0]) {
-        playAudio(correct);
-        dispatch(addCorrectAnswer());
-        changeData(word, 'correct');
-        if (store.getState().playReducer.wrong) {
-          setTimeout(() => playAudio(failure), 1000);
-        } else {
-          setTimeout(() => playAudio(success), 1000);
-        }
+    } else if (sound === store.getState().playReducer.arrayOfWords[0]) {
+      playAudio(correct);
+      dispatch(addCorrectAnswer());
+      changeData(word, CORRECT);
+      if (store.getState().playReducer.wrong) {
+        setTimeout(() => playAudio(failure), 1000);
       } else {
-        playAudio(error);
-        dispatch(addWrongAnswer());
-        changeWrongData(store.getState().playReducer.arrayOfWords[0], 'wrong');
+        setTimeout(() => playAudio(success), 1000);
       }
+    } else {
+      playAudio(error);
+      dispatch(addWrongAnswer());
+      changeWrongData(store.getState().playReducer.arrayOfWords[0], WRONG);
     }
   };
 
   const makeSound = () => {
     if (classPlay !== styles.card__play) {
       playAudio(sound);
-      changeData(word, 'clicks');
+      changeData(word, CLICKS);
     } else if (classDisabled !== styles.card__disabled) {
       checkTheArray();
     }
@@ -114,13 +113,10 @@ function Card({
 
   return (
     <Flippy
-      flipOnHover={onHover} // default false
-      flipOnClick={false} // default false
-      flipDirection="horizontal" // horizontal or vertical
-      ref={ref} // to use toggle method like ref.curret.toggle()
-      // if you pass isFlipped prop component will be controlled component.
-      // and other props, which will go to div
-      // className={cn(styles.card, classPlay)}
+      flipOnHover={onHover}
+      flipOnClick={false}
+      flipDirection="horizontal"
+      ref={ref}
       className={cn(styles.card, classPlay, classDisabled)}
     >
       <FrontSide
@@ -131,7 +127,7 @@ function Card({
         <img src={image} alt={word} className={styles.card__img} />
         <div className={styles.card__footer}>
           <span className={styles.card__word}>{word}</span>
-          <button type="button" onClick={flipCard}>
+          <button type="button" onClick={flipCard} className={styles.card__btn}>
             <Arrows />
           </button>
         </div>

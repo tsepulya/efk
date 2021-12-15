@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import styles from './PlayButton.module.css';
 import repeat from '../../assets/common/img/repeat.svg';
-// import startPlay from '../../service/startPlay';
 import playAudio from '../../service/playAudio';
 import { addArrayLength, addArrayOfWords, returnToInitialState } from '../../store/actions';
 import store from '../../store/store';
-
-const START = 'Start game';
+import { START } from '../../constants/constants';
+import styles from './PlayButton.module.css';
 
 const RepeatBtn = () => (
   <img src={repeat} alt="repeat" className={styles.btn__repeat_img} />
@@ -37,13 +35,15 @@ const PlayButton = ({ category }) => {
   };
 
   return (
-    <button
-      type="button"
-      className={innerBtn === START ? styles.btn__play_start : styles.btn__play_reset}
-      onClick={() => changeBtn()}
-    >
-      {innerBtn}
-    </button>
+    <div className={styles.btn__container}>
+      <button
+        type="button"
+        className={innerBtn === START ? styles.btn__play_start : styles.btn__play_reset}
+        onClick={() => changeBtn()}
+      >
+        {innerBtn}
+      </button>
+    </div>
   );
 };
 

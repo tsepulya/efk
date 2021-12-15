@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router';
 import { useMode, MODE_PLAY, MODE_TRAIN } from '../../context/ModeProvider';
@@ -51,7 +52,7 @@ const CategoryPage = ({ repeat }) => {
   return (
     <>
       {fin && <EndOfGame />}
-      <div className={classHidden}>
+      <div className={cn(styles.main, classHidden)}>
         <h1 className={styles.container__category_name}>{cardCategory.category}</h1>
         <StarRating />
         <CardWords card={cardCategory} />

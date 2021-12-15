@@ -1,94 +1,104 @@
 .statistics__container {
-    margin: auto;
-    width: 96%;
+  margin: auto;
+  width: 96%;
 }
 
 .statistics__btn_div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .statistics__btn {
-    color: #fff;
-    background: var(--theme-default-btn);
-    font-family: Roboto, sans-serif;
-    font-size: 20px;
-    padding: 10px 15px;
-    border: 0;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  .statistics__btn:hover {
-    cursor: pointer;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.repeat__link {
+  text-decoration: none;
+}
+
+.statistics__btn {
+  color: #fff;
+  background: var(--theme-default-btn);
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.statistics__btn:hover {
+  cursor: pointer;
+}
+
+.statistics__table {
+  width: 100%;
+}
+
+.table__title:hover {
+  cursor: pointer;
+}
+
+th {
+  background: var(--theme-default-tableHeadBg);
+  border-bottom: 3px solid var(--theme-default-tableHeadBorder);
+  padding: 10px;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+}
+
+tr:nth-child(odd) {
+  background: #fff;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background: var(--theme-default-tableHeadBorder);
+  text-align: center;
+}
+
+.statistics__difficult_p {
+  color: #fc6262;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media (min-width: 1050px) and (max-width: 1449px) {
 
   .statistics__table {
-    width: 1450px;
+    width: 1050px;
   }
 
-  .table__title:hover {
-    cursor: pointer;
+}
+
+@media (min-width: 800px) and (max-width: 1049px) {
+
+  .statistics__table {
+    margin: auto;
+    width: 800px;
   }
-  
-  th {
-    background: var(--theme-default-tableHeadBg);
-    border-bottom: 3px solid var(--theme-default-tableHeadBorder);
-    padding: 10px;
-    text-align: center;
+
+}
+
+@media (max-width: 799px) {
+
+  .statistics__table {
+    font-size: 12px;
+    width: 320px;
   }
-  
+
+  th,
   td {
-    padding: 10px;
-  }
-  
-  tr:nth-child(odd) {
-    background: #fff;
-    text-align: center;
-  }
-  tr:nth-child(even) {
-    background: var(--theme-default-tableHeadBorder);
-    text-align: center;
-  }
-  
-  .statistics__difficult_p {
-    color: #fc6262;
-    font-size: 30px;
-    font-weight: bold;
+    padding: 0;
   }
 
-  @media (min-width: 1050px) and (max-width: 1449px) {
-
-    .statistics__table {
-      width: 1050px;
-    }
-
+  .statistics__btn {
+    font-size: 16px;
+    padding: 6px 10px;
   }
-  
-  @media (min-width: 800px) and (max-width: 1049px) {
-  
-    .statistics__table {
-      margin: auto;
-      width: 800px;
-    }
 
-  }
-  
-  @media (max-width: 799px) {
-  
-    .statistics__table {
-      font-size: 12px;
-      width: 320px;
-    }
-  
-    th,
-    td {
-      padding: 0;
-    }
-    
-  }
+}

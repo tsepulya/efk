@@ -11,8 +11,8 @@ const createCategoryOfDifficult = () => {
     category: 'repeat', words: [], translation: [], sound: [], images: [], path: '',
   };
   if (wordsSorted.length) {
-    // eslint-disable-next-line max-len
-    wordsDifficult = wordsSorted.sort((a, b) => (a.wrong / (a.correct + a.wrong) > b.wrong / (b.correct + b.wrong) ? -1 : 1));
+    wordsDifficult = wordsSorted.sort((a, b) => (
+      a.wrong / (a.correct + a.wrong) > b.wrong / (b.correct + b.wrong) ? -1 : 1));
     if (wordsDifficult.length > 8) {
       wordsDifficult = wordsDifficult.slice(0, 7);
     }

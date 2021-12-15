@@ -3,6 +3,8 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
+    margin: auto;
+    width: 96%;
 }
   
 .footer__link_github,
@@ -13,5 +15,23 @@
 }
   
 .footer__logo {
-    width: 40%;
+    width: 100%;
+}
+
+.footer__link {
+    width: 100px;
+    text-decoration: none;
+}
+
+@media (max-width: 799px) {
+
+    .footer__link_github,
+    .footer__year {
+      font-size: 20px;
+    }
+
+    .footer__link {
+        width: 80px;
+    }
+  
 }

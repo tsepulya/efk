@@ -8,14 +8,13 @@ const Categories = ({ categories }) => (
     {categories.map(({
       category, words, images, path,
     }) => (
-      <Link to={path} key={category}>
+      <Link to={path} key={category} className={styles.card__link}>
         <div className={styles.card__category}>
           <img src={images[0]} alt={words[0]} className={styles.category__img} />
           <p className={styles.category__name}>{category}</p>
         </div>
       </Link>
     ))}
-    ;
   </div>
 );
 

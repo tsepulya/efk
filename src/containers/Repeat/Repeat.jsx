@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router';
 import CategoryPage from '../CategoryPage/CategoryPage';
-import styles from './Repeat.module.css';
 import createCategoryOfDifficult from '../../service/createCategoryOfDifficult';
+import styles from './Repeat.module.css';
 
 const Repeat = () => {
   const [redirect, setRedirect] = useState(false);

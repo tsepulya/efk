@@ -1,12 +1,7 @@
-// import { omit } from 'lodash';
-
 import {
   ADD_CORRECT_ANSWER, ADD_WRONG_ANSWER, ADD_STAR,
   ADD_ACTIVE_SOUND, ADD_ARRAY_OF_WORDS, RETURN_TO_INITIAL_STATE, ADD_ARRAY_LENGTH,
 } from '../constants/actionTypes';
-// import { getLocalStorage } from '../../utils/localStorage';
-
-// const initialState = getLocalStorage('store');
 
 export const initialState = {
   arrayOfWords: [],
