@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import store from '../../store/store';
@@ -10,7 +9,7 @@ const EndOfGame = () => {
   const errors = store.getState().playReducer.wrong;
   const [redirect, setRedirect] = useState(false);
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       setRedirect(true);
     }, 3000);
   }, []);

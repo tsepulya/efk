@@ -22,34 +22,34 @@ const Menu = () => {
         <div className={styles.side_panel}>
           <p className={styles.menu__btn_close} onClick={handleClick} aria-hidden="true">X</p>
           <ul className={styles.list__container}>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/" exact className={styles.menu__page}>Main page</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/action-a" className={styles.menu__page}>Action (set A)</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/action-b" className={styles.menu__page}>Action (set B)</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/transport" className={styles.menu__page}>Transport</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/adjective" className={styles.menu__page}>Adjective</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/animal-a" className={styles.menu__page}>Animal (set A)</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/animal-b" className={styles.menu__page}>Animal (set B)</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/clothes" className={styles.menu__page}>Clothes</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/emotions" className={styles.menu__page}>Emotions</NavLink>
             </li>
-            <li className={styles.menu__list}>
+            <li className={styles.menu__list} onClick={handleClick} aria-hidden="true">
               <NavLink to="/statistics" className={styles.menu__page}>Statistics</NavLink>
             </li>
           </ul>
