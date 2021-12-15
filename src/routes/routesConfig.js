@@ -2,6 +2,7 @@ import HomePage from '../containers/HomePage/HomePage';
 import CategoryPage from '../containers/CategoryPage/CategoryPage';
 import Statistics from '../containers/Statistics/Statistics';
 import Repeat from '../containers/Repeat/Repeat';
+import NotFound from '../containers/NotFound/NotFound';
 
 const routesConfig = [
   {
@@ -58,6 +59,11 @@ const routesConfig = [
     path: '/repeat',
     exact: true,
     component: Repeat,
+  },
+  {
+    path: '*',
+    exact: false,
+    component: NotFound,
   },
 ];
 
