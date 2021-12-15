@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useLocation } from 'react-router';
 import { useMode, MODE_PLAY, MODE_TRAIN } from '../../context/ModeProvider';
 import CardWords from '../../components/CardWords/CardWords';
@@ -9,7 +10,7 @@ import EndOfGame from '../../components/EndOfGame/EndOfGame';
 import styles from './CategoryPage.module.css';
 import StarRating from '../../components/StarRating/StarRating';
 
-const CategoryPage = () => {
+const CategoryPage = ({ repeat }) => {
   const location = useLocation();
   const isMode = useMode();
   const [btn, setBtn] = useState(false);
@@ -18,7 +19,8 @@ const CategoryPage = () => {
 
   const changeInCorrect = () => {
     const correctAns = store.getState().playReducer.correct;
-    if (correctAns === 8) {
+    const length = store.getState().playReducer.arrayLength;
+    if (correctAns === length && length !== 0) {
       setFin(true);
       setClassHidden(styles.hidden);
     }
@@ -42,8 +44,12 @@ const CategoryPage = () => {
       }
     }, [isMode]);
   }
-
-  const cardCategory = categories.find((elem) => elem.path === location.pathname);
+  let cardCategory;
+  if (repeat === '') {
+    cardCategory = categories.find((elem) => elem.path === location.pathname);
+  } else {
+    cardCategory = repeat;
+  }
   return (
     <>
       {fin && <EndOfGame />}
@@ -55,6 +61,14 @@ const CategoryPage = () => {
       </div>
     </>
   );
+};
+
+CategoryPage.propTypes = {
+  repeat: PropTypes.instanceOf(Object),
+};
+
+CategoryPage.defaultProps = {
+  repeat: '',
 };
 
 export default CategoryPage;

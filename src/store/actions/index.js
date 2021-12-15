@@ -1,6 +1,6 @@
 import {
   ADD_CORRECT_ANSWER, ADD_WRONG_ANSWER, ADD_STAR,
-  ADD_ACTIVE_SOUND, ADD_ARRAY_OF_WORDS, RETURN_TO_INITIAL_STATE,
+  ADD_ACTIVE_SOUND, ADD_ARRAY_OF_WORDS, RETURN_TO_INITIAL_STATE, ADD_ARRAY_LENGTH,
 } from '../constants/actionTypes';
 
 export const addCorrectAnswer = () => ({
@@ -19,6 +19,11 @@ export const addActiveSound = (sound) => ({
 export const addArrayOfWords = (array) => ({
   type: ADD_ARRAY_OF_WORDS,
   payload: array,
+});
+
+export const addArrayLength = (length) => ({
+  type: ADD_ARRAY_LENGTH,
+  payload: length,
 });
 
 export const returnToInitialState = () => ({

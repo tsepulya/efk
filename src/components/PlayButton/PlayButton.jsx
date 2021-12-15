@@ -5,7 +5,7 @@ import styles from './PlayButton.module.css';
 import repeat from '../../assets/common/img/repeat.svg';
 // import startPlay from '../../service/startPlay';
 import playAudio from '../../service/playAudio';
-import { addArrayOfWords, returnToInitialState } from '../../store/actions';
+import { addArrayLength, addArrayOfWords, returnToInitialState } from '../../store/actions';
 import store from '../../store/store';
 
 const START = 'Start game';
@@ -21,6 +21,7 @@ const PlayButton = ({ category }) => {
   const startPlay = () => {
     dispatch(returnToInitialState());
     const soundArray = category.sound.slice(0);
+    dispatch(addArrayLength(category.words.length));
     const playArray = soundArray.sort(() => Math.random() - 0.5);
     dispatch(addArrayOfWords(playArray));
     playAudio(store.getState().playReducer.arrayOfWords[0]);
