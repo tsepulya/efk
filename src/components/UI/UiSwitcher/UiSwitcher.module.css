@@ -1,0 +1,102 @@
+.checkbox_ya {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    user-select: none;
+}
+
+.checkbox_ya .checkbox_ya_switch {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    background: var(--theme-default-switcher);
+    background-position: -72px 0;
+    background-size: 200% 100%;
+    border: 1px solid #bababb;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 4px;
+    transition: all 150ms ease-in;
+}
+
+.checkbox_ya .checkbox_ya_switch:before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    text-indent: -100%;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    transform: translateY(-50%);
+    transition: all 150ms ease-in;
+}
+
+.checkbox_ya .checkbox_ya_feature {
+    position: relative;
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+}
+
+.checkbox_ya .checkbox_ya_feature:before,
+.checkbox_ya .checkbox_ya_feature:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 150ms ease-in;
+}
+
+.checkbox_ya .checkbox_ya_feature:before {
+    content: attr(data-label-on);
+    left: -60%;
+}
+
+.checkbox_ya .checkbox_ya_feature:after {
+    content: attr(data-label-off);
+    right: 8px;
+}
+
+.checkbox_ya input[type="checkbox"] {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkbox_ya input[type="checkbox"]:checked+.checkbox_ya_switch {
+    background-position: 0 0;
+    border-color: rgba(153, 122, 0, 0.5);
+}
+
+.checkbox_ya input[type="checkbox"]:checked+.checkbox_ya_switch:before {
+    left: calc(100% - 36px);
+}
+
+.checkbox_ya input[type="checkbox"]:checked+.checkbox_ya_switch .checkbox_ya_feature:before {
+    left: 13px;
+}
+
+.checkbox_ya input[type="checkbox"]:checked+.checkbox_ya_switch .checkbox_ya_feature:after {
+    right: -60%;
+}
+
+.checkbox_ya input[type="checkbox"]:not(:disabled)+.checkbox_ya_switch:hover {
+    cursor: pointer;
+}

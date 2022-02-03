@@ -1,0 +1,11 @@
+.main__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main_delete {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}

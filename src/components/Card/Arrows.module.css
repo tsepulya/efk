@@ -1,0 +1,11 @@
+.arrows__svg {
+    fill: #929292;
+}
+
+.card__arrows:hover {
+    cursor: pointer;
+}
+
+.card__arrows:hover .arrows__svg {
+    fill: #16b6a1;
+}

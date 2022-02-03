@@ -1,0 +1,13 @@
+.main {
+    width: 100%;
+}
+
+.container__category_name {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}

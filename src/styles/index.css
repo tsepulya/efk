@@ -1,0 +1,40 @@
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-half-black: rgba(0, 0, 0, 0.5);
+    --font-family-main: 'Roboto', sans-serif;
+
+
+    --transition: .3s;
+
+    --theme-train-card: linear-gradient(180deg, #0099ae, #00bf82 40%, #fff 0%);
+    --theme-play-card: linear-gradient(180deg, #fc6262, #ffd86f 40%, #fff 0%);
+    --theme-default-card: var(--theme-train-card);
+
+    --theme-train-switcher: linear-gradient(180deg, #0099ae 0%, #00bf82 100%);
+    --theme-play-switcher: linear-gradient(180deg, #fc6262 0%, #ffd86f 100%);
+    --theme-default-switcher: var(--theme-train-switcher);
+
+    --theme-train-btn: linear-gradient(90deg, #0099ae 0%, #00bf82 100%);
+    --theme-play-btn: linear-gradient(90deg, #fc6262 0%, #ffd86f 100%);
+    --theme-default-btn: var(--theme-train-btn);
+
+    --theme-train-tableHeadBg: #0099ae;
+    --theme-play-tableHeadBg: #fc6262;
+    --theme-default-tableHeadBg: var(--theme-train-tableHeadBg);
+
+    --theme-train-tableHeadBorder: #00bf82;
+    --theme-play-tableHeadBorder: #ffd86f;
+    --theme-default-tableHeadBorder: var(--theme-train-tableHeadBorder);
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-main);
+}

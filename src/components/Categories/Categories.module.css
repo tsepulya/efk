@@ -1,0 +1,41 @@
+.main__container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card__category {
+    width: 300px;
+    height: 280px;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: var(--theme-default-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    color: var(--color-black);
+    margin: 20px 25px;
+    transition: var(--transition);
+}
+
+.card__category:hover {
+    box-shadow: 0 10px 20px rgb(0 0 0 / 40%);
+}
+
+.category__img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 10px solid var(--color-white);
+    object-fit: cover;
+    margin: 30px auto;
+}
+
+.card__link {
+    text-decoration: none;
+    width: 300px;
+    height: 280px;
+    margin: 20px 25px;
+}
